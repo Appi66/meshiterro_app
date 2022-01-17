@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>MeshiterroApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,6 +15,9 @@
       <% if user_signed_in? %>
        <li>
            <%= link_to '投稿フォーム', new_post_image_path %>
+       </li>
+       <li>
+           <%= link_to 'マイページ', user_path(current_user.id) %>
        </li>
        <li>
       　<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
